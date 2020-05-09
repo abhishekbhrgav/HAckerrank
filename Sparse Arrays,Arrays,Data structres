@@ -1,0 +1,17 @@
+vector<int> matchingStrings(vector<string> strings, vector<string> queries) {
+    vector<int> v;
+    int n=queries.size(),data;
+    for(int i=0;i<n;i++)
+    {
+        if(count(strings.begin(),strings.end(),queries[i]))
+        {
+            data=count(strings.begin(),strings.end(),queries[i]); //returns the number of occurences of querie[i].
+            v.push_back(data);
+        }
+        else
+        {
+            v.push_back(0);
+        }
+    }
+    return v;
+}
