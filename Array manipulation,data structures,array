@@ -1,0 +1,34 @@
+//Take the data in one vector and then put the first n elements os vector in separate vector and remainig in separate vector.Append elements
+of first partial vector to second partial vector.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> v;
+    vector<int> v1;
+    vector<int> v2;
+    int n,r,data;
+    cin>>n>>r;
+    for(int i=0;i<n;i++)
+    {
+        cin>>data;
+        v.push_back(data);
+        //cout<<"pushed"<<endl;
+    }
+    for(int i=0;i<r;i++)
+    {
+            v1.push_back(v[i]);
+    }
+    for(int i=r;i<n;i++)
+    {
+        v2.push_back(v[i]);
+    }
+    v2.insert(v2.end(),v1.begin(),v1.end());
+    int s=v2.size();
+    for(int i=0;i<s;i++)
+    {
+        cout<<v2[i]<<" ";
+    }
+}
